@@ -13,7 +13,7 @@ export async function generateStaticParams() {
 
 export const revalidate = 60;
 
-const Project = ({ params }: { params: { slug: string } }) => {
+const page = ({ params }: { params: { slug: string } }) => {
   const { slug } = params;
 
   const section = sections?.find((sec) => sec.slug === slug);
@@ -139,4 +139,4 @@ const Project = ({ params }: { params: { slug: string } }) => {
   );
 };
 
-export default Project;
+export default page;
