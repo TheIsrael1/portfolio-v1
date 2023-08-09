@@ -1,20 +1,13 @@
 "use client";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import Menu from "../Menu";
+const Menu = dynamic(() => import("../Menu"), { ssr: false });
 import { navData } from "./nav.data";
+import dynamic from "next/dynamic";
+const ScrollLink = dynamic(() => import("../ScrollLink"), { ssr: false });
 
 const Nav = () => {
   const router = usePathname();
-
-  // TODO: FOR NOW I NAVIGATE TO PAGE END, BUT SHOULD BE TO PARTICULAR SECTION
-  const scrollToElement = (i: string) => {
-    const element = document.getElementById(i);
-    scrollTo({
-      behavior: "smooth",
-      top: document.body.scrollHeight,
-    });
-  };
 
   return (
     <nav className="w-full relative py-[2.5rem] flex justify-between items-center container px-base lg:px-lg">
@@ -27,13 +20,12 @@ const Nav = () => {
       <div className="hidden fixed top-[2.5rem] right-4 lg:right-[3.69rem] md:flex flex-col items-end gap-[1.275rem] text-white-3/[0.66]  group">
         {navData?.map((i, idx) =>
           i?.section ? (
-            <span
+            <ScrollLink
               key={idx}
-              onClick={() => scrollToElement(`#${i?.link}`)}
               className="hover:text-white-3 cursor-pointer transition-colors duration-300 ease-in-out group "
-            >
-              {i?.title}
-            </span>
+              link={i?.link}
+              label={i?.title}
+            />
           ) : (
             <Link
               href={i?.link}

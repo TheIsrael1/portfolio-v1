@@ -7,6 +7,8 @@ import { useOnClickOutside } from "usehooks-ts";
 import Hamburger from "../hamburger";
 import { navData } from "../Nav/nav.data";
 import Link from "next/link";
+import dynamic from "next/dynamic";
+const ScrollLink = dynamic(() => import("../ScrollLink"), { ssr: false });
 
 const Menu = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -17,15 +19,6 @@ const Menu = () => {
   });
 
   useLockBodyScroll(menuOpen);
-
-  // TODO: FOR NOW I NAVIGATE TO PAGE END, BUT SHOULD BE TO PARTICULAR SECTION
-  const scrollToElement = (i: string) => {
-    const element = document.getElementById(i);
-    scrollTo({
-      behavior: "smooth",
-      top: document.body.scrollHeight,
-    });
-  };
 
   return (
     <div className="relative z-20 overflow-hidden ">
@@ -60,16 +53,12 @@ const Menu = () => {
               <div className="flex-grow flex flex-col justify-center items-center text-white-3/[0.66] py-[2.5rem] gap-8 overflow-y-auto overflow-x-hidden">
                 {navData?.map((i, idx) =>
                   i?.section ? (
-                    <span
+                    <ScrollLink
                       key={idx}
-                      onClick={() => {
-                        setMenuOpen(false);
-                        scrollToElement(`#${i?.link}`);
-                      }}
                       className="hover:text-white-3 cursor-pointer transition-colors duration-300 ease-in-out group text-3xl "
-                    >
-                      {i?.title}
-                    </span>
+                      label={i?.title}
+                      link={i?.link}
+                    />
                   ) : (
                     <Link
                       onClick={() => setMenuOpen(false)}

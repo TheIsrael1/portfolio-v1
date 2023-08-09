@@ -70,7 +70,7 @@ export default function Home() {
                     d="M4.5 19.5l15-15m0 0H8.25m11.25 0v11.25"
                   />
                 </svg>
-                <Link href={`/${i?.slug}`}>
+                <Link href={`/projects/${i?.slug}`}>
                   <span className="font-pt text-[1.25rem] tracking-[0.0625rem] leading-[1.5rem] group-hover:underline text-white-3">
                     see showcase
                   </span>
