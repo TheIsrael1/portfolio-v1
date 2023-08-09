@@ -25,10 +25,10 @@ const page = ({ params }: { params: { slug: string } }) => {
   return (
     <main className="flex flex-col items-center justify-between container px-base lg:px-lg">
       <section className="w-full py-[7.94rem] flex flex-col items-start ">
-        <h2 className="text-white-1 font-bowbly text-[3.28125rem] tracking-[0.65188rem] mb-[0.06rem]">
+        <h2 className="text-white-1 font-bowbly text-[2.5rem] md:text-[3.28125rem] tracking-[0.65188rem] mb-[0.06rem]">
           {section?.title}
         </h2>
-        <p className="text-[2.20081rem] font-roboto mb-[2.06rem] font-[300] leading-[3.77869rem] text-white-1 max-w-[62.8125rem]">
+        <p className="text-[1.50081rem] md:text-[2.20081rem] font-roboto mb-[2.06rem] font-[300] leading-[2.7786rem] md:leading-[3.77869rem] text-white-1 max-w-[62.8125rem]">
           {section?.description}
         </p>
         <div className="w-full flex flex-col md:flex-row  gap-12 items-start">

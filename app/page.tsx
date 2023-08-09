@@ -8,10 +8,10 @@ export default function Home() {
   return (
     <main className="flex flex-col items-center justify-between container px-base lg:px-lg">
       <section className="w-full py-[14.19rem] flex flex-col items-start ">
-        <h2 className="text-white-1 font-bowbly text-[3.28125rem] tracking-[0.65188rem] mb-[0.06rem]">
+        <h2 className="text-white-1 font-bowbly text-[2.5rem] md:text-[3.28125rem] tracking-[0.65188rem] mb-[0.06rem]">
           software enginner
         </h2>
-        <p className="text-[2.70081rem] font-roboto mb-[2.06rem] font-[300] leading-[3.77869rem] text-white-1 max-w-[62.8125rem]">
+        <p className="text-[1.7rem] md:text-[2.70081rem] font-roboto mb-[2.06rem] font-[300] leading-[2.7rem] md:leading-[3.77869rem] text-white-1 max-w-[62.8125rem]">
           based in Ibadan, Nigeria. I employ my software engineering skills to
           create user-friendly software that exceeds expectations in
           collaboration with teams and clients to deliver impactful results.
@@ -70,7 +70,7 @@ export default function Home() {
                     d="M4.5 19.5l15-15m0 0H8.25m11.25 0v11.25"
                   />
                 </svg>
-                <Link href={`/projects/${i?.slug}`}>
+                <Link href={`/${i?.slug}`}>
                   <span className="font-pt text-[1.25rem] tracking-[0.0625rem] leading-[1.5rem] group-hover:underline text-white-3">
                     see showcase
                   </span>
