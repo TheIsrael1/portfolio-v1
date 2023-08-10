@@ -4,9 +4,10 @@ interface IScrollLink {
   link: string;
   className: string;
   label: string;
+  onClick?: () => void;
 }
 
-const ScrollLink = ({ className, link, label }: IScrollLink) => {
+const ScrollLink = ({ className, link, label, onClick }: IScrollLink) => {
   // TODO: FOR NOW I NAVIGATE TO PAGE END, BUT SHOULD BE TO PARTICULAR SECTION
   const scrollToElement = (i: string) => {
     scrollTo({
@@ -16,7 +17,13 @@ const ScrollLink = ({ className, link, label }: IScrollLink) => {
   };
 
   return (
-    <span onClick={() => scrollToElement(link)} className={className}>
+    <span
+      onClick={() => {
+        onClick?.();
+        scrollToElement(link);
+      }}
+      className={className}
+    >
       {label}
     </span>
   );

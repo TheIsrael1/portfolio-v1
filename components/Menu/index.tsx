@@ -54,6 +54,7 @@ const Menu = () => {
                 {navData?.map((i, idx) =>
                   i?.section ? (
                     <ScrollLink
+                      onClick={() => setMenuOpen(false)}
                       key={idx}
                       className="hover:text-white-3 cursor-pointer transition-colors duration-300 ease-in-out group text-3xl "
                       label={i?.title}
