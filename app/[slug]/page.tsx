@@ -4,6 +4,7 @@ import React from "react";
 import { notFound } from "next/navigation";
 import Image from "next/image";
 import Link from "next/link";
+import { shimmer, toBase64 } from "@/lib/Shimmer";
 
 export async function generateStaticParams() {
   return sections.map((i) => {
@@ -32,35 +33,41 @@ const page = ({ params }: { params: { slug: string } }) => {
           {section?.description}
         </p>
         <div className="w-full flex flex-col md:flex-row  gap-12 items-start">
-          <div className="flex flex-col gap-[1.44rem] cursor-pointer group w-[18rem]">
-            <div className="relative w-full max-h-[9.25rem] bg-transparent overflow-hidden">
-              <Image
-                src={section?.image}
-                alt=""
-                objectFit="cover"
-                objectPosition="center"
-              />
-            </div>
-            <div className="flex items-center gap-[0.5rem] text-white-4">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                strokeWidth={1.5}
-                stroke="currentColor"
-                className="w-[1.37rem] h-[1.37rem]"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="M4.5 19.5l15-15m0 0H8.25m11.25 0v11.25"
+          <Link href={`${section?.liveLink}`} target="_blank">
+            <div className="flex flex-col gap-[1.44rem] cursor-pointer group w-[18rem]">
+              <div className="relative w-full max-h-[9.25rem] bg-transparent overflow-hidden">
+                <Image
+                  src={section?.image}
+                  alt=""
+                  objectFit="cover"
+                  objectPosition="center"
+                  placeholder="blur"
+                  blurDataURL={`data:image/svg+xml;base64,${toBase64(
+                    shimmer(700, 475)
+                  )}`}
                 />
-              </svg>
-              <span className="font-pt text-[1.25rem] tracking-[0.0625rem] leading-[1.5rem] group-hover:underline text-white-3">
-                open site
-              </span>
+              </div>
+              <div className="flex items-center gap-[0.5rem] text-white-4">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  strokeWidth={1.5}
+                  stroke="currentColor"
+                  className="w-[1.37rem] h-[1.37rem]"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="M4.5 19.5l15-15m0 0H8.25m11.25 0v11.25"
+                  />
+                </svg>
+                <span className="font-pt text-[1.25rem] tracking-[0.0625rem] leading-[1.5rem] group-hover:underline text-white-3">
+                  open site
+                </span>
+              </div>
             </div>
-          </div>
+          </Link>
           <div className="flex flex-col gap-[1.06rem] items-start font-pt">
             <h5 className="text-white-2/[0.72] font-[700] text-[0.875rem] leading-[1.568rem] tracking-[0.125rem]">
               Things I did

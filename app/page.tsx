@@ -1,8 +1,7 @@
 import { sections } from "@/folio-config";
+import { shimmer, toBase64 } from "@/lib/Shimmer";
 import Image from "next/image";
 import Link from "next/link";
-
-// TODO: move [slug] to /post/[slug] so that we can access other routes on /x later
 
 export default function Home() {
   return (
@@ -40,8 +39,11 @@ export default function Home() {
                 <div className="relative w-[10.19806rem] max-h-[12.84956rem] flex-shrink-0 bg-trasparent overflow-hidden">
                   <Image
                     src={i?.image}
-                    alt=""
-                    // fill={true}
+                    alt=" "
+                    placeholder="blur"
+                    blurDataURL={`data:image/svg+xml;base64,${toBase64(
+                      shimmer(700, 475)
+                    )}`}
                     objectFit="cover"
                     className="bg-left-top"
                   />

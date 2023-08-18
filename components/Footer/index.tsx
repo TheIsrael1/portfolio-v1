@@ -10,7 +10,7 @@ const Footer = () => {
       id="footer"
       className="w-full container pt-[1rem] my-[2rem] border-t border-t-white-3/30"
     >
-      <div className="w-full flex flex-col-reverse md:flex-row gap-4 md:gap-2 justify-between items-center text-white-3/90 font-pt">
+      <div className="w-full flex flex-col-reverse md:flex-row gap-4 md:gap-2 justify-between items-center text-white-3/50 font-pt">
         <span>Dev By Dero . Design by Timi</span>
         <div className="flex items-center gap-4">
           <Link href={`https://twitter.com/dero__ball`} target="_blank">
@@ -65,7 +65,10 @@ const Footer = () => {
             </svg>
           </Link>
         </div>
-        <button onClick={() => router.push("mailto:ehindero2016@gmail.com")}>
+        <button
+          className="text-white-3/50 hover:text-white-3 transition-colors ease-in-out duration-300"
+          onClick={() => router.push("mailto:ehindero2016@gmail.com")}
+        >
           ehindero2016@gmail.com
         </button>
       </div>

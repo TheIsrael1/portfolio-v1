@@ -65,13 +65,13 @@ export const sections: sectionInterface[] = [
     title: 'Nollywood Filmmaker',
     description: 'An online social platform for stakeholders in the nollywood film industry',
     collaborators: ['Ehindero Israel (Me)', 'EZEKIEL, Dorcas Oluwayanmi (designer)'],
-    liveLink: 'https://anthill-eight.vercel.app/',
+    liveLink: 'https://nfm.timbu.cloud',
     sections: [
         {
             title: 'Technical Insight',
             description: `I implemented a clean and elegant platform with extensive plan and access models based on user subscription`,
             footLinkLabel: 'Website',
-            footLink: 'https://anthill-eight.vercel.app/',
+            footLink: 'https://nfm.timbu.cloud',
             footnote: 'Technologies used includes Typescript, React (Vite), Shad cn, tailwind',
             images: [nolly1, nolly2, nolly3]
         },

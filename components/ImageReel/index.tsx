@@ -1,3 +1,4 @@
+import { shimmer, toBase64 } from "@/lib/Shimmer";
 import Image, { StaticImageData } from "next/image";
 
 interface ImageReelInterface {
@@ -12,7 +13,15 @@ const ImageReel = ({ images }: ImageReelInterface) => {
           className="w-[17.89163rem] max-h-[15.93006rem] relative flex-shrink-0 bg-transparent overflow-hidden"
           key={idx}
         >
-          <Image src={i} alt="" objectFit="center" />
+          <Image
+            placeholder="blur"
+            blurDataURL={`data:image/svg+xml;base64,${toBase64(
+              shimmer(700, 475)
+            )}`}
+            src={i}
+            alt=""
+            objectFit="center"
+          />
         </div>
       ))}
     </div>
