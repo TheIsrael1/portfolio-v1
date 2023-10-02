@@ -91,7 +91,7 @@ module.exports = {
         "accordion-up": "accordion-up 0.2s ease-out",
       },
       backgroundImage: {
-        'shader': "url('../assets/shader.png')"
+        'shader': "url('../assets/shader.webp')"
       }
     },
   },
