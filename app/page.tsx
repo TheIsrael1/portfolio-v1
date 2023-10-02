@@ -29,7 +29,7 @@ export default function Home() {
             with teams and clients to develop user friendly software that
             scales.
           </p>
-          <div className="flex items-center gap-4 md:gap-[1.62rem]">
+          <div className="flex items-center flex-wrap gap-4 md:gap-[1.62rem]">
             <svg
               width="32"
               height="33"
