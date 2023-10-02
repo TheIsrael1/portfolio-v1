@@ -8,7 +8,7 @@ const Footer = () => {
   return (
     <footer
       id="footer"
-      className="w-full container pt-[1rem] my-[2rem] border-t border-t-white-3/30"
+      className="w-full container py-[2rem] mt-[2rem]  border-t border-t-white-3/30"
     >
       <div className="w-full flex flex-col-reverse md:flex-row gap-4 md:gap-2 justify-between items-center text-white-3/50 font-pt">
         <span>Dev By Dero . Design by Timi</span>

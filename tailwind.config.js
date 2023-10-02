@@ -22,7 +22,8 @@ module.exports = {
       inter: ["var(--font-inter)"],
       bowbly: ["var(--font-bowlby)"],
       roboto: ["var(--font-roboto)"],
-      pt: ["var(--font-pt)"]
+      pt: ["var(--font-pt)"],
+      handlee: ["var(--font-handlee)"]
     },
     extend: {
       colors: {
@@ -66,7 +67,8 @@ module.exports = {
           4: '#E9ECED'
         },
         green: {
-          1: '#243F47'
+          1: '#243F47',
+          2: '#0B4B5F'
         }
       },
       borderRadius: {
@@ -88,6 +90,9 @@ module.exports = {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
       },
+      backgroundImage: {
+        'shader': "url('../assets/shader.png')"
+      }
     },
   },
   plugins: [require("tailwindcss-animate")],

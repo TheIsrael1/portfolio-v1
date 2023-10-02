@@ -37,11 +37,11 @@ const Menu = () => {
           ></div>
           <aside
             ref={menuRef}
-            className={`fixed bg-green-1 top-0 right-0 bottom-0 w-full h-screen z-20 ${
+            className={`fixed bg-shader bg-gray-900 top-0 right-0 bottom-0 w-full h-screen z-20 ${
               menuOpen ? `translate-x-0` : `translate-x-[100%]`
             } transition-transform delay-300 duration-300 ease-in-out `}
           >
-            <div className="w-full h-full  flex flex-col px-[1.5rem] py-[1.875rem] ">
+            <div className="w-full h-full  bg-green-2/80 flex flex-col px-[1.5rem] py-[1.875rem] ">
               <div className="w-full flex justify-end pb-[1.875rem] ">
                 <button
                   className="fixed top-0 flex items-center group mt-[calc(0.5rem+2.5rem)]"

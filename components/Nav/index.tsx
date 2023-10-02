@@ -13,9 +13,11 @@ const Nav = () => {
     <nav className="w-full relative py-[2.5rem] flex justify-between items-center container px-base lg:px-lg">
       <div className="flex flex-col items-start text-white-3 text-[1.4375rem]">
         <Link href={`/`}>
-          <span>Ehindero Israel (Dero)</span>
+          <span className="font-handlee">Ehindero Israel (Dero)</span>
         </Link>
-        <span>{router?.length < 2 ? null : router}</span>
+        <span className="font-handlee">
+          {router?.length < 2 ? null : router}
+        </span>
       </div>
       <div className="hidden fixed top-[2.5rem] right-4 lg:right-[3.69rem] md:flex flex-col items-end gap-[1.275rem] text-white-3/[0.66]  group">
         {navData?.map((i, idx) =>
