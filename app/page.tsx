@@ -25,7 +25,7 @@ export default function Home() {
             software enginner
           </h2>
           <p className="text-[1.2rem] md:text-[2rem] font-roboto font-[300] leading-[1.7rem] md:leading-[3.2rem] text-white-1 max-w-[62.8125rem]">
-            With 3 years + experience is software engineering, I collaborate
+            With 4 years + experience is software engineering, I collaborate
             with teams and clients to develop user friendly software that
             scales.
           </p>
@@ -72,7 +72,7 @@ export default function Home() {
             </span>
           </div>
           <p className="max-w-[24.625rem] text-white-2/[0.72] font-pt text-[0.875rem] leading-[1.568rem] tracking-[0.125rem]">
-            Currently availabe for a full time frontend engineering role.
+            Currently available for a full time frontend engineering role.
           </p>
         </div>
       </section>
